@@ -5,6 +5,7 @@ import {
   createCareUnit,
   updateCareUnit,
   deleteCareUnit,
+  addCareUnit
 } from "../controllers/careUnitController.js";
 import { auth, adminAuth } from "../middleware/auth.js";
 import { validateCareUnit } from "../validators/careUnitValidator.js";
@@ -27,7 +28,8 @@ router.get("/:id", getCareUnit);
 // @route   POST /api/care-units
 // @desc    Create care unit
 // @access  Private (Admin only)
-router.post("/", adminAuth, validateCareUnit, createCareUnit);
+router.post("/", createCareUnit);
+router.post("/", addCareUnit);
 
 // @route   PUT /api/care-units/:id
 // @desc    Update care unit

@@ -11,16 +11,6 @@
                 <label for="careUnitName" class="popup-label">Care Unit Name:</label>
                 <input id="careUnitName" formControlName="careUnitName" type="text"
                        class="popup-input" />
-
-                <label for="careUnitType" class="popup-label">Care Unit Type:</label>
-                <select id="careUnitType" formControlName="careUnitType" class="popup-input">
-                    <option value="" disabled selected>Select a type</option>
-                    <option value="ICU">ICU</option>
-                    <option value="General Ward">General Ward</option>
-                    <option value="Pediatrics">Pediatrics</option>
-                    <option value="Emergency">Emergency</option>
-                </select>
-
                 <div class="popup-buttons">
                     <button type="submit" class="popup-submit">
                         {{ isEditMode ? 'Update' : 'Submit' }}
@@ -36,17 +26,15 @@
             <tr>
                 <th>S.No</th>
                 <th>Care Unit Name</th>
-                <th>Care Unit Type</th>
                 <th>Actions</th>
             </tr>
             <tr *ngFor="let careunit of careunitsArray; let i = index">
                 <td>{{ i + 1 }}</td>
                 <td>{{ careunit.name }}</td>
-                <td>{{ careunit.type }}</td>
-                <td class="table-actions">
+                
+    <td class="table-actions">
                     <button class="edit-btn" (click)="onEdit(i)">EDIT</button>
-                    <button class="delete-btn" (click)="onDelete(careunit)">DELETE</button>
-                </td>
+                    <button class="delete-btn" (click)="onDelete(careunit)">DELETE</button>            </td>
             </tr>
         </table>
     </div>

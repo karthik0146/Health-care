@@ -47,11 +47,29 @@ const createCareUnit = async (req, res) => {
     const newCareUnit = new CareUnit({
       careUnit,
       description,
-      createdBy: req.user._id,
+      // createdBy: req.user._id,
     });
 
     const savedCareUnit = await newCareUnit.save();
     await savedCareUnit.populate("createdBy", "username");
+
+    res.status(201).json(savedCareUnit);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+const addCareUnit = async (req, res) => {
+  try {
+    const { careUnit, description } = req.body;
+
+    const newCareUnit = new CareUnit({
+      careUnit,
+      description,
+    });
+
+    const savedCareUnit = await newCareUnit.save();
 
     res.status(201).json(savedCareUnit);
   } catch (error) {
@@ -116,4 +134,5 @@ export {
   createCareUnit,
   updateCareUnit,
   deleteCareUnit,
+  addCareUnit
 }; 
