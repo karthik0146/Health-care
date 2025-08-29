@@ -1,23 +1,19 @@
 .sidebar {
     width: 130px;
-    height: calc(100vh - 56px); /* Full height minus navbar */
+    height: calc(100vh - 56px);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     position: fixed;
     left: 0;
-    top: 56px; /* Start right below navbar */
+    top: 56px; 
     overflow-y: auto;
     padding-top: 10px;
 }
-
-/* Sidebar List */
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
-/* Sidebar Items */
 .sidebar li {
     margin: 8px 12px;
     border-radius: 12px;
@@ -42,8 +38,6 @@
     box-shadow: 0 5px 20px rgba(81, 81, 194, 0.3);
     border: 1px solid rgba(81, 81, 194, 0.5);
 }
-
-/* Sidebar Icons */
 .sidebar li i {
     display: flex;
     align-items: center;
@@ -72,8 +66,6 @@
     fill: rgb(81, 81, 194);
     stroke: rgb(81, 81, 194);
 }
-
-/* Sidebar Text */
 .sidebar li span {
     font-size: 14px;
     font-weight: 500;
@@ -87,16 +79,12 @@
     opacity: 1;
     color: #ffffff;
 }
-
-/* Main Content Adjust */
 .main-content {
-    margin-left: 130px; /* same width as sidebar */
+    margin-left: 130px;
     padding: 30px;
     min-height: calc(100vh - 56px);
-    margin-top: 56px; /* space for navbar */
+    margin-top: 56px;
 }
-
-/* Responsive */
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;

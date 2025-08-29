@@ -1,0 +1,264 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== CONTAINER & LAYOUT ===== */
+.hospital-container {
+  margin-left: 136px;
+  margin-top: 70px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8faff 0%, #e8f4fd 100%);
+  min-height: calc(100vh - 70px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== IMAGE DISPLAY SECTION ===== */
+.image-display-section {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.image-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.image-header h2 {
+  margin: 0;
+  color: #2a5d8f;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.btn-remove {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-remove:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.dropped-image {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.dropped-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== DRAG AND DROP SECTION ===== */
+.drag-drop-section {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.drag-drop-box {
+  border: 3px dashed #2a5d8f;
+  background: linear-gradient(135deg, #f8faff 0%, #e8f4fd 100%);
+  padding: 60px 30px;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drag-drop-box:hover {
+  background: linear-gradient(135deg, #e8f4fd 0%, #d8eaff 100%);
+  border-color: #1e4369;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(42, 93, 143, 0.15);
+}
+
+.drag-drop-box.drag-over {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border-color: #28a745;
+  border-width: 4px;
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(40, 167, 69, 0.2);
+}
+
+.drag-drop-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.drag-icon {
+  font-size: 64px;
+  color: #2a5d8f;
+  transition: transform 0.3s ease;
+}
+
+.drag-drop-box:hover .drag-icon {
+  transform: scale(1.1);
+}
+
+.drag-drop-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2a5d8f;
+  margin: 0;
+}
+
+.drag-drop-content p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.drag-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.feature {
+  font-size: 14px;
+  color: #666;
+  padding: 6px 12px;
+  background: rgba(42, 93, 143, 0.1);
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* ===== BROWSE BUTTON ===== */
+.browse-btn {
+  background: linear-gradient(135deg, #2a5d8f 0%, #1e4369 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(42, 93, 143, 0.3);
+}
+
+.browse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(42, 93, 143, 0.4);
+  background: linear-gradient(135deg, #1e4369 0%, #2a5d8f 100%);
+}
+
+.browse-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(42, 93, 143, 0.3);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .hospital-container {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 20px;
+  }
+  
+  .image-display-section,
+  .drag-drop-section {
+    padding: 20px;
+  }
+  
+  .image-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .btn-remove {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .drag-drop-box {
+    padding: 40px 20px;
+    min-height: 250px;
+  }
+  
+  .drag-drop-content h3 {
+    font-size: 20px;
+  }
+  
+  .drag-drop-content p {
+    font-size: 14px;
+  }
+  
+  .browse-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hospital-container {
+    padding: 15px;
+  }
+  
+  .image-display-section,
+  .drag-drop-section {
+    padding: 15px;
+  }
+  
+  .drag-drop-box {
+    padding: 30px 15px;
+  }
+  
+  .drag-icon {
+    font-size: 48px;
+  }
+  
+  .drag-drop-content h3 {
+    font-size: 18px;
+  }
+  
+  .browse-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

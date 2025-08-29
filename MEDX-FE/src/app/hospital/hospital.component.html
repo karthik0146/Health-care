@@ -1,2 +1,37 @@
 <app-home></app-home>
-<p>hospital works!</p>
+
+<div class="hospital-container">
+  <!-- Dropped Image Display at Top -->
+  <div *ngIf="droppedImage" class="image-display-section">
+    <div class="image-header">
+      <h2>Dropped Image</h2>
+      <button class="btn-remove" (click)="removeImage()">🗑️ Remove</button>
+    </div>
+    <div class="image-container">
+      <img [src]="droppedImage" alt="Dropped Image" class="dropped-image">
+    </div>
+  </div>
+
+  <!-- Drag and Drop Section -->
+  <div class="drag-drop-section">
+    <div class="drag-drop-box"
+         [class.drag-over]="isDragOver"
+         (drop)="onDrop($event)"
+         (dragover)="onDragOver($event)"
+         (dragleave)="onDragLeave($event)">
+      
+      <div class="drag-drop-content">
+        <div class="drag-icon">📁</div>
+        <h3>Drag & Drop your image here</h3>
+        <p>or use the browse button below</p>
+        <div class="drag-features">
+          <span class="feature">📱 Supports all image formats</span>
+          <span class="feature">⚡ Max 15MB file size</span>
+        </div>
+        <button class="browse-btn" (click)="onBrowseClick()">
+          📂 Browse Images
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,3 @@
-/* --- Main Container & Layout --- */
 .fluid-container {
   margin-left: 130px;
   margin-top: 56px;
@@ -22,8 +21,6 @@
   font-weight: 600;
   color: #3a3f51;
 }
-
-/* --- Create Button --- */
 .create-btn {
   background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
@@ -41,8 +38,6 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 91, 187, 0.4);
 }
-
-/* --- Popup Styles --- */
 .popup-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -100,7 +95,7 @@
 .popup-buttons {
   display: flex;
   gap: 10px;
-  justify-content: flex-end; /* Aligns buttons to the right */
+  justify-content: flex-end;
 }
 
 .popup-submit {
@@ -119,7 +114,7 @@
 }
 
 .popup-cancel {
-  background: linear-gradient(135deg, #6c757d, #5a6268); /* Grey gradient */
+  background: linear-gradient(135deg, #6c757d, #5a6268);
   color: white;
   padding: 8px 14px;
   border: none;
@@ -132,8 +127,6 @@
   transform: translateY(-2px);
   box-shadow: 0 3px 10px rgba(90, 98, 104, 0.4);
 }
-
-/* --- Table Card --- */
 .list-container {
   margin: 40px auto 0;
   width: 100%;
@@ -143,8 +136,6 @@
   padding: 20px;
   animation: slideUp 0.4s ease;
 }
-
-/* --- Table Styling --- */
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -183,8 +174,6 @@
   padding: 2rem;
   font-style: italic;
 }
-
-/* --- NEW: Action Buttons --- */
 .table-actions button {
   padding: 8px 14px;
   font-size: 0.9rem;
@@ -232,8 +221,6 @@
 .error-msg {
   background: linear-gradient(135deg, #e74a3b, #be2617);
 }
-
-/* --- Animations --- */
 @keyframes popup-fade {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
