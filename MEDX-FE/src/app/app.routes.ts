@@ -9,21 +9,19 @@ import { StafComponent } from './staff/staf.component';
 import { FluidsComponent } from './fluids/fluids.component';
 import { MedicationsComponent } from './medications/medications.component';
 import { HospitalComponent } from './hospital/hospital.component';
+import { routeguardGuard } from './components/routeGuard/routeguard.guard';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    {
-        path: 'home', component: HomeComponent,
-    },
     { path: 'registration', component: RegistrationComponent },
-    { path: 'features', component: FeaturesComponent },
-    {path:'careunit',component:CareunitComponent},
-    {path:'beds',component:BedsComponent},
-    {path:'staff',component:StafComponent},
-    {path:'fluids',component:FluidsComponent},
-    {path:'medications',component:MedicationsComponent},
-    {path:'hospital',component:HospitalComponent},
+    { path: 'features', component: FeaturesComponent, canActivate: [routeguardGuard] },
+    { path: 'careunit', component: CareunitComponent , canActivate: [routeguardGuard] },
+    { path: 'beds', component: BedsComponent , canActivate: [routeguardGuard] },
+    { path: 'staff', component: StafComponent , canActivate: [routeguardGuard] },
+    { path: 'fluids', component: FluidsComponent , canActivate: [routeguardGuard] },
+    { path: 'medications', component: MedicationsComponent , canActivate: [routeguardGuard] },
+    { path: 'hospital', component: HospitalComponent , canActivate: [routeguardGuard] },
 
     { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
